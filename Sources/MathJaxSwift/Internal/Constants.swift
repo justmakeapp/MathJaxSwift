@@ -24,6 +24,7 @@
 //
 
 import Foundation
+import MathJaxSwiftAssets
 
 internal struct Constants {
   
@@ -68,38 +69,18 @@ internal struct Constants {
     
   }
   
-  struct Paths {
-    
-    /// The path to the chtml.js bundle.
-    static let chtmlBundleFile = "dist/chtml.bundle.js"
-    
-    /// The path to the mml.js bundle.
-    static let mmlBundleFile = "dist/mml.bundle.js"
-    
-    /// The path to the svg.js bundle.
-    static let svgBundleFile = "dist/svg.bundle.js"
-    
-    /// The path to the mjn package-lock.json file.
-    static let packageLockFile = "package-lock.json"
-    
-  }
-  
   struct URLs {
-    
-    /// The URL of the mjn top-level directory.
-    static let mjn = Bundle.module.url(forResource: Names.Modules.mjn, withExtension: nil)
-    
     /// The URL of the chtml bundle file.
-    static let chtmlBundle = mjn?.appendingPathComponent(Paths.chtmlBundleFile)
+    static let chtmlBundle = Bundle.mathJaxSwiftAssets.url(forResource: "chtml.bundle", withExtension: "js")
     
     /// The URL of the mml bundle file.
-    static let mmlBundle = mjn?.appendingPathComponent(Paths.mmlBundleFile)
+    static let mmlBundle = Bundle.mathJaxSwiftAssets.url(forResource: "mml.bundle", withExtension: "js")
     
     /// The URL of the svg bundle file.
-    static let svgBundle = mjn?.appendingPathComponent(Paths.svgBundleFile)
+    static let svgBundle = Bundle.mathJaxSwiftAssets.url(forResource: "svg.bundle", withExtension: "js")
     
     /// The URL of the mjn package-lock.json file.
-    static let packageLock = mjn?.appendingPathComponent(Paths.packageLockFile)
+    static let packageLock = Bundle.mathJaxSwiftAssets.url(forResource: "package-lock", withExtension: "json")
     
   }
   
